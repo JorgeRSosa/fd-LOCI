@@ -1,0 +1,3 @@
+RCMD "D:\OneDrive - Escuela Politécnica Nacional\1 Postdoctorado\Investigación & Capacitación\Artículos\JCR\Loci\LociFD\LOCI\h0\h0In50.R"
+RScript "D:\OneDrive - Escuela Politécnica Nacional\1 Postdoctorado\Investigación & Capacitación\Artículos\JCR\Loci\LociFD\LOCI\h0\h0In50.R"
+R --vanilla < "D:\OneDrive - Escuela Politécnica Nacional\1 Postdoctorado\Investigación & Capacitación\Artículos\JCR\Loci\LociFD\LOCI\h0\h0In50.R"
