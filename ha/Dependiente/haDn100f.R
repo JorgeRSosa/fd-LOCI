@@ -1,4 +1,5 @@
 #####Para muestras de 100 curvas
+setwd("~/LOCI")
 source('Fijo/parametros fijos.R')
 source('Fijo/func sim.R')
 b <- 200
@@ -37,8 +38,8 @@ for(k in 1:length(rho)){
    
   }
   d100r[[k]] <- d100
-  save(d100r,file = 'muestra100D_forma_.Rdata')
+  save(d100r,file = 'Rdata/muestra100D_forma_.Rdata')
   p100f[[k]] <- prob100
 }
 
-save(p100f,file = 'prob100D_forma.RData')
+save(p100f,file = 'Rdata/prob100D_forma.RData')

@@ -1,4 +1,5 @@
 #####Para muestras de 50 curvas
+setwd("~/LOCI")
 source('Fijo/parametros fijos.R')
 source('Fijo/func sim.R')
 b <- 200
@@ -11,15 +12,14 @@ for(k in 1:length(rho)){
   prob50 <- list()
   d50 <- list()
   for(l in 1:length(m_f)){
-
     muestra <- list()
     for (i in 1:mc)
       
     {
       set.seed(i)
-      muestra[[i]] <-  fdata(func.sim(n=n1,mdata = length(t),mu = m1(t),sigma = S,rho = rho[k],mu2 = m_f[[l]]),
+      muestra[[i]] <-  fdata(func.sim(n=n1,mdata = length(t),mu = m1(t),sigma = S,rho = rho[k],mu2 = m_m[[l]]),
                              argvals = argvals)
-     }
+    }
       d50[[l]] <- muestra
       
       f1 <- lapply(muestra,function(x) fLOCI(x,alpha =  alpha,nn = n1/2,dist='L2'))
@@ -36,8 +36,8 @@ for(k in 1:length(rho)){
       prob50[[l]] <- rbind(unlist(aL2n),unlist(aL2d),unlist(aDe),unlist(afda.usc))
   }
   d50r[[k]] <- d50
-  save(d50r,file = 'muestra50D_forma_.Rdata')
+  save(d50r,file = 'Rdata/muestra50D_forma_.Rdata')
   p50f[[k]] <- prob50
 }
 
-save(p50f,file = 'prob50D_forma.RData')
+save(p50f,file = 'Rdata/prob50D_forma.RData')

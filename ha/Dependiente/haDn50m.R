@@ -1,4 +1,5 @@
 #####Para muestras de 50 curvas
+setwd("~/LOCI")
 source('Fijo/parametros fijos.R')
 source('Fijo/func sim.R')
 b <- 200
@@ -22,7 +23,7 @@ for(k in 1:length(rho)){
     }
     
     d50[[l]] <- muestra
-    save(d50,file = 'muestra50D_magnitud.Rdata')
+    
     f1 <- lapply(muestra,function(x) fLOCI(x,alpha =  alpha,nn = n1/2,dist='L2'))
     f2 <- lapply(muestra,function(x) fLOCI(x,alpha =  alpha,nn = n1/2,dist='L2e'))
     a <- lapply(muestra,function(x) depth.R1(t(x$data)))
@@ -37,8 +38,8 @@ for(k in 1:length(rho)){
     prob50[[l]] <- rbind(unlist(aL2n),unlist(aL2d),unlist(aDe),unlist(afda.usc))
   }
   d50r[[k]] <- d50
-  save(d50r,file = 'muestra50D_magnitud_.Rdata')
+  save(d50r,file = 'Rdata/muestra50D_magnitud_.Rdata')
   p50m[[k]] <- prob50
 }
 
-save(p50m,file = 'prob50D_magnitud.RData')
+save(p50m,file = 'Rdata/prob50D_magnitud.RData')
