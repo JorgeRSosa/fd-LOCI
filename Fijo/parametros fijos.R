@@ -26,6 +26,11 @@ alpha <- 0.78
 n1 <- 50
 n2 <- 100
 
+no <- 90 # No Outlier
+o <- 10 # Outlier
+
+n <- 100 # tamaño de la muestra
+
 m2 <- function(x) (30*(x^(3/2))*(1-x)) # funcion de media para atípico
 
 gama <- seq(0.2,1,0.2)
@@ -39,3 +44,5 @@ for(i in 1:length(gama)) m_f[[i]] <- (1-gama[i])*m1(t)+gama[i]*m2(t)
 
 m_m <- list()
 for(i in 1:length(delta)) m_m[[i]] <- m1(t) + delta[i]
+
+rho <- c(-0.7,-0.3,0.3,0.7)
