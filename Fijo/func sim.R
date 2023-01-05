@@ -43,7 +43,7 @@ func.sim <- function(n=2,mdata,mu,sigma,rho=0,mu2=NULL,m=NULL){
     }
     #Datos simulados: Y = m(x) + S(x)*E
     res[,1:n] <- drop(mu) + err[,1:n]
-    res[,(n+1):m] <- drop(mu2) + err[,(n+1):m]
+    res[,(n+1):(n+m)] <- drop(mu2) + err[,(n+1):(n+m)]
     }
     else 
       stop("Parameter m must be numeric")
